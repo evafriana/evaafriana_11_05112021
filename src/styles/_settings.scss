@@ -1,10 +1,19 @@
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700&display=swap");
 
+/* font */
 $font-1: "Montserrat", sans-serif;
 
+/* color */
 $color-1: #ff6060;
 $color-2: #fff;
 $color-3: #000;
+
+/* media query */
+$breakpoints: (
+  tablet: 768px,
+  large-tablet: 992px,
+  desktop: 1200px,
+);
 
 * {
   box-sizing: border-box;

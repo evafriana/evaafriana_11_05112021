@@ -1,13 +1,16 @@
-import React from "react";
+import React, { Component } from "react";
+import Banner from "../components/Banner";
 import Footer from "../components/Footer";
 import Navbar from "../components/Navbar";
 
-export default function About() {
-  return (
-    <div>
-      <Navbar />
-      <h1>A propos</h1>
-      <Footer />;
-    </div>
-  );
+export default class About extends Component {
+  render() {
+    return (
+      <div>
+        <Navbar />
+        <Banner url="./img/bannerAbout.png" classImage="banner__about" />
+        <Footer />
+      </div>
+    );
+  }
 }

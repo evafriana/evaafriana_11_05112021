@@ -1,0 +1,37 @@
+.banner {
+  position: relative;
+
+  &__img {
+    width: 100%;
+    height: 111px;
+    object-fit: none;
+    border-radius: 1.5625rem;
+
+    @media screen and (min-width: map-get($breakpoints, large-tablet)) {
+      object-fit: cover;
+    }
+  }
+
+  &__about {
+    height: 223px;
+
+    @media screen and (min-width: map-get($breakpoints, large-tablet)) {
+      height: 111px;
+    }
+  }
+
+  &__text {
+    text-align: left;
+    position: absolute;
+    top: 50%;
+    left: 40%;
+    transform: translate(-50%, -50%);
+    color: white;
+    font-size: 30px;
+    font-weight: 500;
+
+    @media screen and (min-width: map-get($breakpoints, large-tablet)) {
+      left: 50%;
+    }
+  }
+}
