@@ -1,3 +1,7 @@
 .about {
   margin: 2rem 0;
+
+  @media screen and (min-width: map-get($breakpoints, large-tablet)) {
+    margin: 3rem 6rem;
+  }
 }
