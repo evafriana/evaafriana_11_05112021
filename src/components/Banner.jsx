@@ -2,7 +2,6 @@ import React, { Component } from "react";
 
 export default class Banner extends Component {
   render() {
-    console.log(this);
     return (
       <section className="banner">
         <img

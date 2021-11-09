@@ -4,7 +4,7 @@ import Logo from "./Logo";
 
 export default function Navbar() {
   return (
-    <div className="navbar">
+    <section className="navbar">
       <Logo />
       <div>
         <NavLink exact to="/" activeClassName="nav-active">
@@ -19,6 +19,6 @@ export default function Navbar() {
           À propos
         </NavLink>
       </div>
-    </div>
+    </section>
   );
 }

@@ -5,7 +5,7 @@
     width: 100%;
     height: 111px;
     object-fit: none;
-    border-radius: 1.5625rem;
+    border-radius: $border-radius;
 
     @media screen and (min-width: map-get($breakpoints, large-tablet)) {
       object-fit: cover;
@@ -27,11 +27,12 @@
     left: 40%;
     transform: translate(-50%, -50%);
     color: white;
-    font-size: 30px;
+    font-size: 22px;
     font-weight: 500;
 
     @media screen and (min-width: map-get($breakpoints, large-tablet)) {
       left: 50%;
+      font-size: 30px;
     }
   }
 }

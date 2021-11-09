@@ -1,7 +1,9 @@
 import React, { Component } from "react";
 import Banner from "../components/Banner";
+import Card from "../components/Card";
 import Footer from "../components/Footer";
 import Navbar from "../components/Navbar";
+import Data from "../data/data.json";
 
 export default class Home extends Component {
   render() {
@@ -12,6 +14,13 @@ export default class Home extends Component {
           url="./img/bannerHome.png"
           title={"Chez vous, partout et ailleurs"}
         />
+        <section className="galleryApartment">
+          {Data.map((appartments) => {
+            return (
+              <Card cover={appartments.cover} location={appartments.location} />
+            );
+          })}
+        </section>
         <Footer />
       </div>
     );
