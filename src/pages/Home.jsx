@@ -7,6 +7,7 @@ import Data from "../data/data.json";
 
 export default class Home extends Component {
   render() {
+    console.log(this);
     return (
       <div>
         <Navbar />
@@ -19,6 +20,7 @@ export default class Home extends Component {
             {Data.map((appartments) => {
               return (
                 <Card
+                  id={appartments.id}
                   cover={appartments.cover}
                   location={appartments.location}
                 />

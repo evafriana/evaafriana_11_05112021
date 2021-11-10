@@ -1,13 +1,51 @@
-import React from "react";
+import React, { Component } from "react";
 import Footer from "../components/Footer";
 import Navbar from "../components/Navbar";
+import Tag from "../components/Tag";
+import Title from "../components/Title";
+import Collapse from "../components/Collapse";
+import Rating from "../components/Rating";
+import Data from "../data/data.json";
 
-export default function Accomodation() {
-  return (
-    <div>
-      <Navbar />
-      <h1>Fiche-logement</h1>
-      <Footer />
-    </div>
-  );
+import Error404 from "./Error404";
+import Profil from "../components/Profil";
+
+export default class Accomodation extends Component {
+  render() {
+    const accomodation = Data.find((item) => {
+      return item.id === this.props?.match?.params?.id;
+    });
+
+    if (!accomodation) return <Error404 />;
+
+    const { title, location, tags, description, equipments, rating, host } =
+      accomodation;
+
+    return (
+      <div>
+        <Navbar />
+        <section className="accomodation">
+          <div className="accomodation__header">
+            <div>
+              <Title title={title} location={location} />
+              <div className="tags">
+                {tags.map((tag) => {
+                  return <Tag tags={tag} />;
+                })}
+              </div>
+            </div>
+            <div>
+              <Profil host={host} />;
+              <Rating rating={rating} />
+            </div>
+          </div>
+          <div className="accomodation__collapse">
+            <Collapse filter="Description" content={description} />
+            <Collapse filter="Équipments" content={equipments} />
+          </div>
+        </section>
+        <Footer />
+      </div>
+    );
+  }
 }

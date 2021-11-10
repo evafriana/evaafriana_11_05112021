@@ -12,7 +12,7 @@ export default function Navbar() {
         </NavLink>
         <NavLink
           exact
-          to="a-propos"
+          to="/a-propos"
           activeClassName="nav-active"
           className="navlink__about"
         >

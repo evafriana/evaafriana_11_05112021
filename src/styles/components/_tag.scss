@@ -1,0 +1,24 @@
+.tags {
+  display: flex;
+  margin: 1rem 0;
+
+  .tag {
+    background: $color-1;
+    color: $color-3;
+    padding: 0.2rem 0.5rem;
+    border-radius: 1rem;
+    margin-right: 0.3rem;
+
+    @media screen and (min-width: map-get($breakpoints, tablet)) {
+      padding: 0.3rem 1rem;
+    }
+
+    &__apt {
+      font-size: 10px;
+
+      @media screen and (min-width: map-get($breakpoints, tablet)) {
+        font-size: 13px;
+      }
+    }
+  }
+}

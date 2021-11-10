@@ -7,15 +7,13 @@ import Error404 from "./pages/Error404";
 
 export default function App() {
   return (
-    <div>
-      <BrowserRouter>
-        <Switch>
-          <Route path="/" exact component={Home} />
-          <Route path="/a-propos" exact component={About} />
-          <Route path="/logement" exact component={Accomodation} />
-          <Route component={Error404} />
-        </Switch>
-      </BrowserRouter>
-    </div>
+    <BrowserRouter>
+      <Switch>
+        <Route path="/" exact component={Home} />
+        <Route path="/a-propos" exact component={About} />
+        <Route path="/logement/:id" exact component={Accomodation} />
+        <Route component={Error404} />
+      </Switch>
+    </BrowserRouter>
   );
 }

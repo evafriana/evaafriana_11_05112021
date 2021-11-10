@@ -1,0 +1,13 @@
+.title {
+  h1 {
+    font-weight: 500;
+
+    @media screen and (min-width: map-get($breakpoints, tablet)) {
+      font-size: 36px;
+    }
+  }
+
+  &__location {
+    margin-top: 0.7rem;
+  }
+}
