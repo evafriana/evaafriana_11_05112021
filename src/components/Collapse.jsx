@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { FaChevronDown } from "react-icons/fa";
-// import { FaChevronUp } from "react-icons/fa";
+import { FaChevronUp } from "react-icons/fa";
 
 export default class Collapse extends Component {
   state = {
@@ -21,8 +21,8 @@ export default class Collapse extends Component {
     return (
       <div className="collapse">
         <div className="collapse__btn" onClick={this.showContent}>
-          <span>{this.props.filter}</span>
-          <FaChevronDown />
+          <p>{this.props.filter}</p>
+          {this.state.show ? <FaChevronUp /> : <FaChevronDown />}
         </div>
         <div className={`collapse__content ${this.state.className}`}>
           {this.props.content}

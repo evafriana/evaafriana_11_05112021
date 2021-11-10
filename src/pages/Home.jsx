@@ -15,11 +15,16 @@ export default class Home extends Component {
           title={"Chez vous, partout et ailleurs"}
         />
         <section className="galleryApartment">
-          {Data.map((appartments) => {
-            return (
-              <Card cover={appartments.cover} location={appartments.location} />
-            );
-          })}
+          <div className="cards">
+            {Data.map((appartments) => {
+              return (
+                <Card
+                  cover={appartments.cover}
+                  location={appartments.location}
+                />
+              );
+            })}
+          </div>
         </section>
         <Footer />
       </div>

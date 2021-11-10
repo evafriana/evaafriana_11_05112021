@@ -3,6 +3,7 @@ import Banner from "../components/Banner";
 import Collapse from "../components/Collapse";
 import Footer from "../components/Footer";
 import Navbar from "../components/Navbar";
+import DataAbout from "../data/about.json";
 
 export default class About extends Component {
   render() {
@@ -11,13 +12,9 @@ export default class About extends Component {
         <Navbar />
         <Banner url="./img/bannerAbout.png" classImage="banner__about" />
         <section className="about">
-          <Collapse filter="Fiabilité" />
-          <Collapse
-            filter="Respect"
-            content="La bienveillance fait partie des valeurs fondatrices de Kasa. Tout comportement discriminatoire ou de perturbation du voisinage entraînera une exclusion de notre plateforme."
-          />
-          <Collapse filter="Service" />
-          <Collapse filter="Responsabilité" />
+          {DataAbout.map((about) => {
+            return <Collapse filter={about.filter} content={about.content} />;
+          })}
         </section>
         <Footer />
       </div>
