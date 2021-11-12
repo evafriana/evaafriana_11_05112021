@@ -9,7 +9,7 @@ export default function Error404() {
       <main className="error404">
         <h1 className="error404__statusCode">404</h1>
         <h3>Oups ! La page que vous demandez n'existe pas.</h3>
-        <NavLink className="error404__LinkToHome" to="/">
+        <NavLink className="error404__LinkToHome" exact to="/">
           Retourner sur la page d'accueil
         </NavLink>
       </main>

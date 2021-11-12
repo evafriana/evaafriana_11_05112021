@@ -6,6 +6,7 @@
     height: 111px;
     object-fit: none;
     border-radius: $border-radius;
+    filter: brightness(70%);
 
     @media screen and (min-width: map-get($breakpoints, large-tablet)) {
       object-fit: cover;

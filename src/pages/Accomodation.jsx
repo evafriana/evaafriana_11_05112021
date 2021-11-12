@@ -9,6 +9,7 @@ import Data from "../data/data.json";
 
 import Error404 from "./Error404";
 import Profil from "../components/Profil";
+import Carrousel from "../components/Carrousel";
 
 export default class Accomodation extends Component {
   render() {
@@ -18,19 +19,32 @@ export default class Accomodation extends Component {
 
     if (!accomodation) return <Error404 />;
 
-    const { title, location, tags, description, equipments, rating, host } =
-      accomodation;
+    const {
+      title,
+      location,
+      tags,
+      description,
+      equipments,
+      rating,
+      host,
+      pictures,
+    } = accomodation;
+
+    // const allEquipments = equipments?.map((item) => <p>{item}</p>);
 
     return (
       <div>
         <Navbar />
         <section className="accomodation">
+          <article className="carrousel">
+            <Carrousel pictures={pictures} />;
+          </article>
           <div className="accomodation__header">
             <div>
               <Title title={title} location={location} />
               <div className="tags">
-                {tags.map((tag) => {
-                  return <Tag tags={tag} />;
+                {tags.map((tag, index) => {
+                  return <Tag key={index} tags={tag} />;
                 })}
               </div>
             </div>
@@ -41,7 +55,12 @@ export default class Accomodation extends Component {
           </div>
           <div className="accomodation__collapse">
             <Collapse filter="Description" content={description} />
-            <Collapse filter="Équipments" content={equipments} />
+            <Collapse
+              filter="Équipments"
+              content={equipments.map((item, index) => (
+                <p key={index}> {item}</p>
+              ))}
+            />
           </div>
         </section>
         <Footer />

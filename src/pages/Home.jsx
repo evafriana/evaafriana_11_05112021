@@ -20,6 +20,7 @@ export default class Home extends Component {
             {Data.map((appartments) => {
               return (
                 <Card
+                  key={appartments.id}
                   id={appartments.id}
                   cover={appartments.cover}
                   location={appartments.location}

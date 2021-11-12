@@ -1,10 +1,11 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import logoKasa from "../assets/logo-kasa.png";
 
 export default function Logo() {
   return (
-    <section className="logo">
+    <Link to="/" className="logo">
       <img className="logo__banner" src={logoKasa} alt="logo" />
-    </section>
+    </Link>
   );
 }

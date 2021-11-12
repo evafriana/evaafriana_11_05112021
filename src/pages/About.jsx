@@ -12,8 +12,14 @@ export default class About extends Component {
         <Navbar />
         <Banner url="./img/bannerAbout.png" classImage="banner__about" />
         <section className="about">
-          {DataAbout.map((about) => {
-            return <Collapse filter={about.filter} content={about.content} />;
+          {DataAbout.map((about, index) => {
+            return (
+              <Collapse
+                key={index}
+                filter={about.filter}
+                content={about.content}
+              />
+            );
           })}
         </section>
         <Footer />

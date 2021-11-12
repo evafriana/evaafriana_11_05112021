@@ -25,6 +25,8 @@
     padding: 60px 15px 20px 15px;
     z-index: -1;
     line-height: 1.5rem;
+    display: flex;
+    flex-direction: column;
   }
 
   .isClose {
