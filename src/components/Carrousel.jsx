@@ -5,6 +5,7 @@ export default class Carrousel extends Component {
   constructor(props) {
     super(props);
     this.numberOfPictures = this.props.pictures.length - 1;
+    this.arrows = this.numberOfPictures > 1;
   }
 
   getNextPicture = (nextPicture) => {
@@ -37,18 +38,22 @@ export default class Carrousel extends Component {
   render() {
     return (
       <article className="carrousel">
-        <FaChevronLeft
-          className="left-arrow"
-          onClick={this.handlePreviousPicture}
-        >
-          previous
-        </FaChevronLeft>
-        <FaChevronRight
-          className="right-arrow"
-          onClick={this.handleNextPicture}
-        >
-          next
-        </FaChevronRight>
+        {this.arrows && (
+          <>
+            <FaChevronLeft
+              className="left-arrow"
+              onClick={this.handlePreviousPicture}
+            >
+              previous
+            </FaChevronLeft>
+            <FaChevronRight
+              className="right-arrow"
+              onClick={this.handleNextPicture}
+            >
+              next
+            </FaChevronRight>
+          </>
+        )}
         <img
           src={this.props.pictures[this.state?.currentPicture || 0]}
           alt="slide-pic"

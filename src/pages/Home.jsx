@@ -22,6 +22,7 @@ export default class Home extends Component {
                 <Card
                   key={appartments.id}
                   id={appartments.id}
+                  description={appartments.description}
                   cover={appartments.cover}
                   location={appartments.location}
                 />
