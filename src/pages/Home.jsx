@@ -7,7 +7,7 @@ import Data from "../data/data.json";
 
 export default class Home extends Component {
   render() {
-    console.log(this);
+    document.title = "Kasa - Home";
     return (
       <div>
         <Navbar />

@@ -1,24 +1,11 @@
 import React, { Component } from "react";
-// import Data from "../data/data.json";
+import { FaChevronLeft, FaChevronRight } from "react-icons/fa";
 
 export default class Carrousel extends Component {
   constructor(props) {
     super(props);
     this.numberOfPictures = this.props.pictures.length - 1;
   }
-  //   state = {
-  //     pictures: [],
-  //     current: 0,
-  //   };
-
-  //   showContent = () => {
-  //     this.setState({
-  //       show: !this.state.show,
-  //     });
-  //     this.state.show
-  //       ? this.setState({ className: "isClose" })
-  //       : this.setState({ className: "isOpen" });
-  //   };
 
   getNextPicture = (nextPicture) => {
     return nextPicture > this.numberOfPictures ? 0 : nextPicture;
@@ -49,15 +36,25 @@ export default class Carrousel extends Component {
 
   render() {
     return (
-      <div>
-        <button onClick={this.handlePreviousPicture}>previous</button>
-        <button onClick={this.handleNextPicture}>next</button>
+      <article className="carrousel">
+        <FaChevronLeft
+          className="left-arrow"
+          onClick={this.handlePreviousPicture}
+        >
+          previous
+        </FaChevronLeft>
+        <FaChevronRight
+          className="right-arrow"
+          onClick={this.handleNextPicture}
+        >
+          next
+        </FaChevronRight>
         <img
           src={this.props.pictures[this.state?.currentPicture || 0]}
           alt="slide-pic"
           className="carrousel__pic"
         />
-      </div>
+      </article>
     );
   }
 }

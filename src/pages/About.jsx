@@ -7,6 +7,7 @@ import DataAbout from "../data/about.json";
 
 export default class About extends Component {
   render() {
+    document.title = "Kasa - A propos";
     return (
       <div>
         <Navbar />

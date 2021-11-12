@@ -13,6 +13,8 @@ import Carrousel from "../components/Carrousel";
 
 export default class Accomodation extends Component {
   render() {
+    document.title = "Kasa - Logement";
+
     const accomodation = Data.find((item) => {
       return item.id === this.props?.match?.params?.id;
     });
@@ -30,15 +32,11 @@ export default class Accomodation extends Component {
       pictures,
     } = accomodation;
 
-    // const allEquipments = equipments?.map((item) => <p>{item}</p>);
-
     return (
       <div>
         <Navbar />
         <section className="accomodation">
-          <article className="carrousel">
-            <Carrousel pictures={pictures} />;
-          </article>
+          <Carrousel pictures={pictures} />
           <div className="accomodation__header">
             <div>
               <Title title={title} location={location} />
@@ -48,8 +46,8 @@ export default class Accomodation extends Component {
                 })}
               </div>
             </div>
-            <div>
-              <Profil host={host} />;
+            <div className="accomodation__profil">
+              <Profil host={host} />
               <Rating rating={rating} />
             </div>
           </div>

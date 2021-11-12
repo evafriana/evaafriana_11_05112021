@@ -3,6 +3,7 @@ import { NavLink } from "react-router-dom";
 import Navbar from "../components/Navbar";
 
 export default function Error404() {
+  document.title = "Kasa - 404";
   return (
     <div>
       <Navbar />
